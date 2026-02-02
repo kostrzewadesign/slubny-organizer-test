@@ -1,0 +1,19 @@
+project_id = "irxrkutczxskuqbpgntd"
+
+[functions.send-confirmation-email]
+verify_jwt = false
+
+[functions.budget-init-defaults]
+verify_jwt = true
+
+[functions.budget-reset-defaults]
+verify_jwt = true
+
+[functions.task-init-defaults]
+verify_jwt = true
+
+[functions.create-checkout]
+verify_jwt = true
+
+[functions.verify-payment]
+verify_jwt = true

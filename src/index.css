@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes highlight-flash {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: hsl(var(--primary) / 0.1); }
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* ŚlubnyOrganizer Design System Colors */
+    --background: 0 0% 100%; /* #FFFFFF - main background */
+    --foreground: 216 16% 12%; /* #1E1E1E - main text */
+
+    --card: 0 0% 100%; /* #FFFFFF - pure white card background */
+    --card-foreground: 216 16% 12%; /* #1E1E1E - card text */
+    --card-alt: 240 6% 91%; /* #E8E8E8 - alternative card background */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 16% 12%;
+
+    /* Wedding green theme */
+    --primary: 73 33% 55%; /* #A3B368 - main brand green */
+    --primary-foreground: 0 0% 100%; /* white text on green */
+    --primary-muted: 73 40% 75%; /* lighter version of #A3B368 */
+
+    --secondary: 220 13% 91%; /* light gray for secondary actions */
+    --secondary-foreground: 216 16% 12%;
+
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 73 40% 75%; /* lighter version of #A3B368 - accent color */
+    --accent-foreground: 216 16% 12%;
+
+    /* Status colors */
+    --destructive: 9 63% 46%; /* #BD412B - danger/due payments */
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 73 33% 55%; /* #A3B368 - consistent with primary green */
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 45 93% 47%; /* warning yellow */
+    --warning-foreground: 216 16% 12%;
+
+    --danger: 12 61% 48%; /* #C84B31 - danger/error red */
+    --danger-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 73 33% 55%; /* primary green for focus rings */
+    
+    --progress-track: 73 51% 94%; /* pastel green for progress bar track */
+    --nav-inactive: 73 33% 55%; /* navigation inactive color #A3B368 */
+
+    --radius: 1rem; /* rounded-2xl by default */
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - keeping same structure but with dark values */
+    --background: 216 16% 12%; /* #1E1E1E */
+    --foreground: 0 0% 98%;
+
+    --card: 220 13% 18%;
+    --card-foreground: 0 0% 98%;
+    --card-alt: 220 13% 15%;
+
+    --popover: 220 13% 18%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 73 40% 75%; /* lighter version of #A3B368 for dark mode */
+    --primary-foreground: 216 16% 12%;
+    --primary-muted: 73 33% 55%;
+
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 73 33% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 9 63% 56%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 73 40% 75%; /* lighter version for dark mode */
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 45 93% 60%;
+    --warning-foreground: 216 16% 12%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 73 40% 75%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-barlow;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cormorant font-bold;
+  }
+}
+
+/* Additional utility classes for wedding planner */
+@layer utilities {
+  .grid-8 {
+    @apply grid gap-2; /* 8px grid system */
+  }
+  
+  .shadow-card {
+    box-shadow: 0 10px 25px 0 rgba(112, 125, 97, 0.15);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .highlight-flash {
+    animation: highlight-flash 2s ease-in-out;
+  }
+  
+  .transition-wedding {
+    @apply transition-all duration-150 ease-out;
+  }
+  
+  /* Focus states for accessibility */
+  .focus-wedding {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  /* Elegant botanical background - subtle and premium */
+  .bg-botanical {
+    background: linear-gradient(135deg, rgba(163, 179, 104, 0.02) 0%, rgba(163, 179, 104, 0.03) 100%);
+    position: relative;
+  }
+}

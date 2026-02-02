@@ -1,0 +1,26 @@
+<svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .botanical { fill: #A3B368; opacity: 0.1; }
+      .botanical-light { fill: #BFD7A4; opacity: 0.08; }
+    </style>
+  </defs>
+  
+  <!-- Elegant botanical illustration -->
+  <g class="botanical">
+    <!-- Leaves -->
+    <ellipse cx="60" cy="100" rx="8" ry="25" transform="rotate(-20 60 100)"/>
+    <ellipse cx="80" cy="90" rx="6" ry="20" transform="rotate(10 80 90)"/>
+    <ellipse cx="100" cy="120" rx="7" ry="22" transform="rotate(-15 100 120)"/>
+    
+    <!-- Flowers -->
+    <circle cx="75" cy="80" r="12" class="botanical-light"/>
+    <circle cx="90" cy="110" r="10" class="botanical-light"/>
+    <circle cx="110" cy="95" r="8" class="botanical-light"/>
+    
+    <!-- More leaves at bottom */
+    <ellipse cx="70" cy="200" rx="10" ry="28" transform="rotate(-30 70 200)"/>
+    <ellipse cx="90" cy="220" rx="8" ry="24" transform="rotate(5 90 220)"/>
+    <ellipse cx="110" cy="190" rx="9" ry="26" transform="rotate(-10 110 190)"/>
+  </g>
+</svg>
