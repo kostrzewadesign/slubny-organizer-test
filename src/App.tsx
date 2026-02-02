@@ -185,7 +185,7 @@ const App = () => (
               <TableProvider>
               <Toaster />
               <Sonner position="bottom-right" />
-              <BrowserRouter>
+              <BrowserRouter basename={import.meta.env.BASE_URL}>
                 <Routes>
                   <Route path="/auth" element={
                     <PublicRoute>
